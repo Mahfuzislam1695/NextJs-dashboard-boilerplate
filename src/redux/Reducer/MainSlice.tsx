@@ -1,27 +1,43 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 interface MainState {
-	add: boolean;
+  search: boolean;
+  add: boolean;
 }
 
 const initialState: MainState = {
-	add: false,
+  search: false,
+  add: false,
 };
 
 export const MainSlice = createSlice({
-	name: "Initial",
-	initialState,
-	reducers: {
-		handleAddModalOpen: (state) => {
-			state.add = true;
-		},
-	},
+  name: "Initial",
+  initialState,
+  reducers: {
+    handleInitialSearch: (state) => {
+      state.search = true;
+    },
+    handleInitialSearchStop: (state) => {
+      state.search = false;
+    },
+    handleAddModalOpen: (state) => {
+      state.add = true;
+    },
+    handleAddModalClose: (state) => {
+      state.add = false;
+    },
+  },
 });
 
-export const { handleAddModalOpen } = MainSlice.actions;
+export const {
+  handleInitialSearch,
+  handleInitialSearchStop,
+  handleAddModalOpen,
+  handleAddModalClose,
+} = MainSlice.actions;
 
 export default MainSlice.reducer;
 
 export type RootState = {
-	Initial: MainState;
+  Initial: MainState;
 };
