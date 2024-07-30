@@ -24,30 +24,23 @@ const Navbar = () => {
   return (
     <div className="">
       <nav
-        className={`top-0 fixed w-full bg-sky-100 z-[99999999] ${styles.navShadow}`}
+        className={`top-0 fixed w-full bg-sky-100 z-20 ${styles.navShadow} `}
       >
         <div className="container  w-full py-2 px-4">
           <div className="flex justify-between items-start max-lg:items-center">
-            
-
             <div className="flex gap-8 max-lg:hidden">
               <LocalSwitcher />
             </div>
-
-            
-          </div>
-
-          <div className="flex justify-center gap-8  text-[#5954CC] text-lg font-medium py-1.5 max-lg:hidden">
-            <Link
-              href={`/${locale}/admin/dashboard`}
-              className="text-center hover:underline underline-offset-8 decoration-black decoration-2 transition-all"
-            >
-              {t("dashboard")}
-            </Link>
-            
+            <div className="flex justify-center gap-8  text-[#5954CC] text-lg font-medium py-1.5 max-lg:hidden">
+              <Link
+                href={`/${locale}/admin/dashboard`}
+                className="text-center hover:underline underline-offset-8 decoration-black decoration-2 transition-all"
+              >
+                {t("dashboard")}
+              </Link>
+            </div>
           </div>
         </div>
-        
       </nav>
     </div>
   );
